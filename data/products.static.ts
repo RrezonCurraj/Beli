@@ -205,26 +205,80 @@ const chorusColors: Record<string, ProductColor> = {
 
 const chorusOrder = ["tb", "ti", "tc", "vw", "vl", "vt", "vo", "vx", "vd", "vz", "vn", "tn"];
 
-function chorusRows(baseSku: string, folder: string): PlateRow[] {
-  return chorusOrder.map((suf) => ({
+// Ice — glass plates.
+const iceColors: Record<string, ProductColor> = {
+  cb: { name: "E bardhë", hex: "#EDEFEF" },
+  cl: { name: "Perlë", hex: "#D6D2CC" },
+  ct: { name: "Gri", hex: "#B9BCC0" },
+  cn: { name: "E zezë", hex: "#1A1A1C" },
+};
+const iceOrder = ["cb", "cl", "ct", "cn"];
+
+// Ego.
+const egoColors: Record<string, ProductColor> = {
+  pw: { name: "E bardhë", hex: "#F7F7F7" },
+  cy: { name: "Perlë", hex: "#DCDAD3" },
+  nb: { name: "Krem", hex: "#DCD7C8" },
+  ds: { name: "Bezhë", hex: "#B9A992" },
+  br: { name: "Bronz", hex: "#A38C70" },
+  cs: { name: "Shampanjë", hex: "#BFA07E" },
+  st: { name: "Titan", hex: "#9A9488" },
+  gr: { name: "Argjend", hex: "#C9CBCC" },
+  db: { name: "Antracit", hex: "#3A3D40" },
+  cg: { name: "Ar", hex: "#C9A24B" },
+  cp: { name: "Bordo", hex: "#6E4B43" },
+  bs: { name: "Kafe", hex: "#5E4A3E" },
+};
+const egoOrder = ["pw", "cy", "nb", "ds", "br", "cs", "st", "gr", "db", "cg", "cp", "bs"];
+
+// Lux — premium plates with chrome inner frame.
+const luxColors: Record<string, ProductColor> = {
+  tb: { name: "E bardhë", hex: "#F4F4F1" },
+  xw: { name: "E bardhë mat", hex: "#F7F7F7" },
+  yb: { name: "E bardhë e ndezur", hex: "#FAFAFA" },
+  xl: { name: "Gri e çelët", hex: "#CFCFCD" },
+  vt: { name: "Argjend", hex: "#B9BBBD" },
+  yt: { name: "Titan", hex: "#A8AAAC" },
+  xs: { name: "Çelik", hex: "#B0A99C" },
+  ws: { name: "Nikel", hex: "#A99E8C" },
+  xg: { name: "Ar", hex: "#C9A24B" },
+  xq: { name: "Bakër", hex: "#8A5A3C" },
+  va: { name: "Antracit", hex: "#3A3A3C" },
+  ya: { name: "Antracit mat", hex: "#34373A" },
+  xm: { name: "E zezë mat", hex: "#2A2A2C" },
+  tn: { name: "E zezë", hex: "#1C1C1E" },
+  yn: { name: "E zezë e shkëlqyer", hex: "#161618" },
+};
+const luxOrder = ["tb", "xw", "yb", "xl", "vt", "yt", "xs", "ws", "xg", "xq", "va", "ya", "xm", "tn", "yn"];
+
+function plateRows(
+  baseSku: string,
+  folder: string,
+  order: string[],
+  colors: Record<string, ProductColor>,
+): PlateRow[] {
+  return order.map((suf) => ({
     sku: `${baseSku}${suf}`,
-    color: chorusColors[suf],
+    color: colors[suf],
     image: `/products/${folder}/${baseSku}${suf}.webp`,
   }));
 }
 
-const oneRows = chorusRows("gw16103", "one");
-const geoRows = chorusRows("gw16403", "geo");
+const oneRows = plateRows("gw16103", "one", chorusOrder, chorusColors);
+const geoRows = plateRows("gw16403", "geo", chorusOrder, chorusColors);
+const iceRows = plateRows("gw16903", "ice", iceOrder, iceColors);
+const egoRows = plateRows("gw16003", "ego", egoOrder, egoColors);
+const luxRows = plateRows("gw16203", "lux", luxOrder, luxColors);
 
 const plateSpecs: PlateSpec[] = [
   { sub: "system-top", code: "TOP", featuredFirst: true, rows: systemTopRows },
   { sub: "virna", code: "VIR", rows: virnaRows },
   { sub: "one", code: "ONE", featuredFirst: true, rows: oneRows },
   { sub: "geo", code: "GEO", featuredFirst: true, rows: geoRows },
-  { sub: "lux", count: 24, code: "LUX" },
-  { sub: "ice", count: 4, code: "ICE" },
+  { sub: "lux", code: "LUX", rows: luxRows },
+  { sub: "ice", code: "ICE", rows: iceRows },
   { sub: "icetouch", count: 4, code: "ICT" },
-  { sub: "ego", count: 12, code: "EGO" },
+  { sub: "ego", code: "EGO", rows: egoRows },
 ];
 
 const seriesOf: Record<string, SeriesSlug> = {

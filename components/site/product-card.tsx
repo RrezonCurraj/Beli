@@ -40,6 +40,11 @@ export function ProductCard({ product }: { product: Product }) {
         <span className="absolute top-3 right-3 size-7 rounded-full bg-background/90 backdrop-blur border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
           <ArrowUpRight className="size-3.5" />
         </span>
+        {(product.subSeries === "ice" || product.subSeries === "icetouch") && (
+          <span className="absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-full bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/30 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide backdrop-blur">
+            Xham
+          </span>
+        )}
       </Link>
       <div className="p-4 flex flex-col gap-3 flex-1">
         <div className="flex-1 flex flex-col gap-1.5">
