@@ -22,6 +22,7 @@ export const categories: Category[] = [
     shortName: "Automatika",
     description:
       "Çelësa automatikë, diferencialë, mbrojtës nga mbitensioni dhe siguresa modulare për tabelat elektrike.",
+    image: "/categories/automatika.webp",
   },
   {
     slug: "kuti-shperndarese",
@@ -29,6 +30,7 @@ export const categories: Category[] = [
     shortName: "Kuti shpërndarëse",
     description:
       "Kuti modulare të jashtme dhe të brendshme, seria 40CDK dhe 40CDX, për tabela elektrike rezidenciale dhe industriale.",
+    image: "/categories/kuti.webp",
   },
   {
     slug: "tabela-ormane",
@@ -36,6 +38,7 @@ export const categories: Category[] = [
     shortName: "Tabela & Ormanë",
     description:
       "Tabela elektrike montimi, ormanë metalikë dhe polyesteri për shpërndarje e komandim në ambiente civile dhe industriale.",
+    image: "/products/tabela-ormane/gw46001f.webp",
   },
   {
     slug: "sistemi-og",
@@ -43,6 +46,7 @@ export const categories: Category[] = [
     shortName: "Sistemi OG",
     description:
       "Tuba të lakueshëm, kuti derivacioni dhe aksesorë instalimi për sistemet elektrike të brendshme dhe të jashtme.",
+    image: "/categories/sistemi-og.webp",
   },
 ];
 
