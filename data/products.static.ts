@@ -64,27 +64,6 @@ const baseProducts: Product[] = [
     featured: true,
   },
   {
-    slug: "panel-led-60x60-40w-4000k",
-    name: "Panel LED 60x60 40W 4000K",
-    sku: "GWP6040N",
-    brand: "Gewiss",
-    category: "ndricim",
-    description:
-      "Panel LED i sipërm 60x60cm, 40W, 4000K (e bardhë neutrale), fluks 4000 lm. I përshtatshëm për zyra dhe shkolla.",
-    image: "/products/placeholder.svg",
-    featured: true,
-  },
-  {
-    slug: "projektor-led-50w-ip65",
-    name: "Projektor LED 50W IP65",
-    sku: "GWP5065",
-    brand: "Gewiss",
-    category: "ndricim",
-    description:
-      "Projektor LED i jashtëm 50W, IP65, 5000K. Për fasada, parkingje dhe ambiente industriale.",
-    image: "/products/placeholder.svg",
-  },
-  {
     slug: "tub-fleksibel-20mm-bardhe",
     name: "Tub fleksibël PVC Ø20mm, i bardhë",
     sku: "GWT20WH",

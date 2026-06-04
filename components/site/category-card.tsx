@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Zap, ShieldCheck, Boxes, Lightbulb, Cable, Gauge } from "lucide-react";
+import { ArrowUpRight, Zap, ShieldCheck, Boxes, Server, Cable, Gauge } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Category } from "@/data/categories";
 import { getProductsByCategory } from "@/data/products";
@@ -10,7 +10,7 @@ const iconFor: Record<string, LucideIcon> = {
   "celesa-priza": Zap,
   "automatika-siguresa": ShieldCheck,
   "kuti-shperndarese": Boxes,
-  "ndricim": Lightbulb,
+  "tabela-ormane": Server,
   "sisteme-tubacioni": Cable,
   "aparate-matese": Gauge,
 };

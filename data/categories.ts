@@ -31,11 +31,11 @@ export const categories: Category[] = [
       "Kuti modulare të jashtme dhe të brendshme, seria 40CDK dhe 40CDX, për tabela elektrike rezidenciale dhe industriale.",
   },
   {
-    slug: "ndricim",
-    name: "Ndriçim",
-    shortName: "Ndriçim",
+    slug: "tabela-ormane",
+    name: "Tabela & Ormanë",
+    shortName: "Tabela & Ormanë",
     description:
-      "Llamba LED, panele, projektorë dhe ndriçim emergjence për ambiente komerciale dhe industriale.",
+      "Tabela elektrike montimi, ormanë metalikë dhe polyesteri për shpërndarje e komandim në ambiente civile dhe industriale.",
   },
   {
     slug: "sisteme-tubacioni",
