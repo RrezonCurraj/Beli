@@ -395,10 +395,77 @@ const tabelaProducts: Product[] = [
     "Orman nga poliesteri me fibër qelqi, derë e verbër me bravë, IP66, gri RAL 7035. Përmasa 800×1060×350 mm. Për shpërndarje fuqie të lartë dhe automatizim."),
 ];
 
+// Sistemi OG — conduits, fittings and clips (Gewiss FK/RK + GW-FIT).
+// Image filenames are case-sensitive on Vercel, kept exactly as uploaded.
+function og(sku: string, file: string, name: string, description: string): Product {
+  return {
+    slug: `og-${sku.toLowerCase()}`,
+    name,
+    sku,
+    brand: "Gewiss",
+    category: "sistemi-og",
+    description,
+    image: `/products/sistemi-og/${file}`,
+  };
+}
+
+const sistemiOgProducts: Product[] = [
+  // RK15 rigid medium tube, PVC, 3 m, grey RAL 7035.
+  og("DX25316", "dx25316.webp", "Tub i ngurtë RK15 Ø16mm",
+    "Tub mbrojtës i ngurtë RK15, PVC, gjatësi 3 m, Ø16 mm, gri RAL 7035."),
+  og("DX25320", "dx25320.webp", "Tub i ngurtë RK15 Ø20mm",
+    "Tub mbrojtës i ngurtë RK15, PVC, gjatësi 3 m, Ø20 mm, gri RAL 7035."),
+  og("DX25325", "dx25325.webp", "Tub i ngurtë RK15 Ø25mm",
+    "Tub mbrojtës i ngurtë RK15, PVC, gjatësi 3 m, Ø25 mm, gri RAL 7035."),
+  og("DX25332", "dx25332.webp", "Tub i ngurtë RK15 Ø32mm",
+    "Tub mbrojtës i ngurtë RK15, PVC, gjatësi 3 m, Ø32 mm, gri RAL 7035."),
+
+  // Diflex spiral flexible sheath, grey RAL 7035.
+  og("DX30016", "dx30016.webp", "Guaskë spirale Diflex Ø16mm",
+    "Guaskë (tub) spirale fleksibël Diflex, Ø16 mm, gri RAL 7035. Mbrojtje kabllosh."),
+  og("DX30020", "dx30020.webp", "Guaskë spirale Diflex Ø20mm",
+    "Guaskë (tub) spirale fleksibël Diflex, Ø20 mm, gri RAL 7035. Mbrojtje kabllosh."),
+  og("DX30025", "dx30025.webp", "Guaskë spirale Diflex Ø25mm",
+    "Guaskë (tub) spirale fleksibël Diflex, Ø25 mm, gri RAL 7035. Mbrojtje kabllosh."),
+  og("DX30032", "dx30032.webp", "Guaskë spirale Diflex Ø32mm",
+    "Guaskë (tub) spirale fleksibël Diflex, Ø32 mm, gri RAL 7035. Mbrojtje kabllosh."),
+
+  // GW-FIT T-junction fittings, polymer, grey RAL 7035.
+  og("DX40216", "dx40216.webp", "Lidhëse T për tub Ø16mm",
+    "Lidhëse në T për tub të ngurtë, polimer antiurt, Ø16 mm, gri RAL 7035."),
+  og("DX40220", "dx40220.webp", "Lidhëse T për tub Ø20mm",
+    "Lidhëse në T për tub të ngurtë, polimer antiurt, Ø20 mm, gri RAL 7035."),
+  og("DX40225", "DX40225.webp", "Lidhëse T për tub Ø25mm",
+    "Lidhëse në T për tub të ngurtë, polimer antiurt, Ø25 mm, gri RAL 7035."),
+  og("DX40232", "DX40232.webp", "Lidhëse T për tub Ø32mm",
+    "Lidhëse në T për tub të ngurtë, polimer antiurt, Ø32 mm, gri RAL 7035."),
+
+  // GW-FIT 90° elbow fittings, polymer, grey RAL 7035.
+  og("DX40316", "DX40316.webp", "Bërryl 90° për tub Ø16mm",
+    "Lidhëse bërryl 90° për tub të ngurtë, polimer antiurt, Ø16 mm, gri RAL 7035."),
+  og("DX40320", "DX40320.webp", "Bërryl 90° për tub Ø20mm",
+    "Lidhëse bërryl 90° për tub të ngurtë, polimer antiurt, Ø20 mm, gri RAL 7035."),
+  og("DX40325", "DX40325.webp", "Bërryl 90° për tub Ø25mm",
+    "Lidhëse bërryl 90° për tub të ngurtë, polimer antiurt, Ø25 mm, gri RAL 7035."),
+  og("DX40332", "DX40332.webp", "Bërryl 90° për tub Ø32mm",
+    "Lidhëse bërryl 90° për tub të ngurtë, polimer antiurt, Ø32 mm, gri RAL 7035."),
+
+  // Snap-fit saddle clips, shockproof polymer, grey RAL 7035.
+  og("GW50601", "gw50601.webp", "Mbajtëse tubi Ø16mm",
+    "Mbajtëse me kërcim (clip) për tub të ngurtë, polimer antiurt, Ø16 mm, gri RAL 7035."),
+  og("GW50602", "gw50602.webp", "Mbajtëse tubi Ø20mm",
+    "Mbajtëse me kërcim (clip) për tub të ngurtë, polimer antiurt, Ø20 mm, gri RAL 7035."),
+  og("GW50603", "gw50603.webp", "Mbajtëse tubi Ø25mm",
+    "Mbajtëse me kërcim (clip) për tub të ngurtë, polimer antiurt, Ø25 mm, gri RAL 7035."),
+  og("GW50604", "gw50604.webp", "Mbajtëse tubi Ø32mm",
+    "Mbajtëse me kërcim (clip) për tub të ngurtë, polimer antiurt, Ø32 mm, gri RAL 7035."),
+];
+
 // Static catalog source. Used ONLY by the DB seed (scripts/seed.ts).
 // Runtime reads come from Neon via data/products.ts.
 export const staticProducts: Product[] = [
   ...generatePlates(),
   ...baseProducts,
   ...tabelaProducts,
+  ...sistemiOgProducts,
 ];
