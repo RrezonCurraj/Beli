@@ -38,9 +38,9 @@ export const categories: Category[] = [
       "Tabela elektrike montimi, ormanë metalikë dhe polyesteri për shpërndarje e komandim në ambiente civile dhe industriale.",
   },
   {
-    slug: "sisteme-tubacioni",
-    name: "Sisteme Tubacioni",
-    shortName: "Tubacione",
+    slug: "sistemi-og",
+    name: "Sistemi OG",
+    shortName: "Sistemi OG",
     description:
       "Tuba të lakueshëm, kuti derivacioni dhe aksesorë instalimi për sistemet elektrike të brendshme dhe të jashtme.",
   },

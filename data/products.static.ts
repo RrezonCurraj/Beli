@@ -68,7 +68,7 @@ const baseProducts: Product[] = [
     name: "Tub fleksibël PVC Ø20mm, i bardhë",
     sku: "GWT20WH",
     brand: "Gewiss",
-    category: "sisteme-tubacioni",
+    category: "sistemi-og",
     description:
       "Tub elektrik fleksibël PVC, diametër 20mm, i bardhë, për instalim të brendshëm muri dhe tavani.",
     image: "/products/placeholder.svg",
@@ -78,7 +78,7 @@ const baseProducts: Product[] = [
     name: "Kuti derivacioni 100x100mm IP55",
     sku: "GWB100",
     brand: "Gewiss",
-    category: "sisteme-tubacioni",
+    category: "sistemi-og",
     description:
       "Kuti derivacioni e jashtme 100x100x50mm, IP55, ngjyrë gri. Me kapak të vidhosur.",
     image: "/products/placeholder.svg",
