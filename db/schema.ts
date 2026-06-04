@@ -57,6 +57,7 @@ export const products = pgTable(
     subSeriesSlug: text("sub_series_slug").references(() => subSeries.slug),
     // { name, hex } — null for non-plate products.
     color: jsonb("color").$type<{ name: string; hex: string } | null>(),
+    sort: integer("sort").default(0).notNull(),
   },
   (t) => [
     index("products_category_idx").on(t.categorySlug),

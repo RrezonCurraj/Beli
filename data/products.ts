@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { asc } from "drizzle-orm";
 import type { SeriesSlug } from "./series";
 import type { Brand, Product, ProductColor } from "./products.static";
 import { getDb, schema } from "../db";
@@ -25,7 +26,10 @@ function toProduct(r: Row): Product {
 
 // One query per render, deduped across all helpers via React cache().
 const loadAll = cache(async (): Promise<Product[]> => {
-  const rows = await getDb().select().from(schema.products);
+  const rows = await getDb()
+    .select()
+    .from(schema.products)
+    .orderBy(asc(schema.products.sort), asc(schema.products.slug));
   return rows.map(toProduct);
 });
 
