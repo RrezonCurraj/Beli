@@ -267,6 +267,7 @@ function plateRows(
 const oneRows = plateRows("gw16103", "one", chorusOrder, chorusColors);
 const geoRows = plateRows("gw16403", "geo", chorusOrder, chorusColors);
 const iceRows = plateRows("gw16903", "ice", iceOrder, iceColors);
+const iceTouchRows = plateRows("gw16955", "icetouch", iceOrder, iceColors);
 const egoRows = plateRows("gw16003", "ego", egoOrder, egoColors);
 const luxRows = plateRows("gw16203", "lux", luxOrder, luxColors);
 
@@ -277,7 +278,7 @@ const plateSpecs: PlateSpec[] = [
   { sub: "geo", code: "GEO", featuredFirst: true, rows: geoRows },
   { sub: "lux", code: "LUX", rows: luxRows },
   { sub: "ice", code: "ICE", rows: iceRows },
-  { sub: "icetouch", count: 4, code: "ICT" },
+  { sub: "icetouch", code: "ICT", rows: iceTouchRows },
   { sub: "ego", code: "EGO", rows: egoRows },
 ];
 
