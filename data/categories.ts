@@ -3,6 +3,8 @@ export type Category = {
   name: string;
   shortName: string;
   description: string;
+  /** Optional dedicated hero image. Falls back to a product photo. */
+  image?: string;
 };
 
 export const categories: Category[] = [
