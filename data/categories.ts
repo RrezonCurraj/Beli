@@ -14,6 +14,7 @@ export const categories: Category[] = [
     shortName: "Çelësa & Priza",
     description:
       "Seritë Gewiss Chorus dhe System: çelësa drite, priza Schuko, USB dhe rrjete strukturuese për banesa dhe zyra.",
+    image: "/products/qelsadhepriza.webp",
   },
   {
     slug: "automatika-siguresa",
