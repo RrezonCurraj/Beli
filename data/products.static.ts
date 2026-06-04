@@ -186,11 +186,41 @@ const virnaRows: PlateRow[] = [
   { sku: "gw22823", color: { name: "Argjend metalik", hex: "#A9AEB2" } },
 ].map((r) => ({ ...r, image: `/products/virna/${r.sku}.webp` }));
 
+// Chorus One & Geo share the same 12 finishes (Gewiss 2-letter color codes
+// appended to the base SKU). Photos named e.g. gw16103tb.webp.
+const chorusColors: Record<string, ProductColor> = {
+  tb: { name: "E bardhë", hex: "#F4F4F1" },
+  ti: { name: "Krem", hex: "#ECE6D6" },
+  tc: { name: "Tortora", hex: "#C7B8A1" },
+  vw: { name: "E bardhë mat", hex: "#F7F7F5" },
+  vl: { name: "Argjend", hex: "#C9CAC9" },
+  vt: { name: "Titan", hex: "#9A9DA0" },
+  vo: { name: "Ar", hex: "#C9A24B" },
+  vx: { name: "Shampanjë", hex: "#C2A878" },
+  vd: { name: "Bordo", hex: "#8E5D60" },
+  vz: { name: "Gri e errët", hex: "#5A5E62" },
+  vn: { name: "E zezë mat", hex: "#2A2A2C" },
+  tn: { name: "E zezë", hex: "#1B1B1D" },
+};
+
+const chorusOrder = ["tb", "ti", "tc", "vw", "vl", "vt", "vo", "vx", "vd", "vz", "vn", "tn"];
+
+function chorusRows(baseSku: string, folder: string): PlateRow[] {
+  return chorusOrder.map((suf) => ({
+    sku: `${baseSku}${suf}`,
+    color: chorusColors[suf],
+    image: `/products/${folder}/${baseSku}${suf}.webp`,
+  }));
+}
+
+const oneRows = chorusRows("gw16103", "one");
+const geoRows = chorusRows("gw16403", "geo");
+
 const plateSpecs: PlateSpec[] = [
   { sub: "system-top", code: "TOP", featuredFirst: true, rows: systemTopRows },
   { sub: "virna", code: "VIR", rows: virnaRows },
-  { sub: "one", count: 12, code: "ONE", featuredFirst: true },
-  { sub: "geo", count: 12, code: "GEO", featuredFirst: true },
+  { sub: "one", code: "ONE", featuredFirst: true, rows: oneRows },
+  { sub: "geo", code: "GEO", featuredFirst: true, rows: geoRows },
   { sub: "lux", count: 24, code: "LUX" },
   { sub: "ice", count: 4, code: "ICE" },
   { sub: "icetouch", count: 4, code: "ICT" },
