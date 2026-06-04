@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Imazh produkti">
+  <rect width="400" height="400" fill="#f4f4f5"/>
+  <g fill="none" stroke="#a0a0a0" stroke-width="2">
+    <rect x="100" y="100" width="200" height="200" rx="8"/>
+    <path d="M120 280 L180 200 L220 240 L280 160"/>
+  </g>
+  <circle cx="160" cy="160" r="14" fill="#ef4c25"/>
+  <text x="200" y="350" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#71717a">Imazh së shpejti</text>
+</svg>
