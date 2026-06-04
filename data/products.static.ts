@@ -326,9 +326,79 @@ function generatePlates(): Product[] {
   return out;
 }
 
+// Tabela & Ormanë — switchboards and enclosures (specs from Gewiss catalogue).
+// Image filenames are case-sensitive on Vercel, kept exactly as uploaded.
+function tabel(
+  sku: string,
+  file: string,
+  name: string,
+  description: string,
+  featured?: boolean,
+): Product {
+  return {
+    slug: `tabel-${sku.toLowerCase()}`,
+    name,
+    sku,
+    brand: "Gewiss",
+    category: "tabela-ormane",
+    description,
+    image: `/products/tabela-ormane/${file}`,
+    featured,
+  };
+}
+
+const tabelaProducts: Product[] = [
+  // 40 CDE — flush boards, blank door + metal frame, IP40.
+  tabel("GW40151N", "GW40151n.webp", "Tabel inkasi 12 module",
+    "Tabel elektrik nga inkasi, 12 (12+2) module, derë e verbër me kornizë metalike, IP40. Për instalime rezidenciale në mur."),
+  tabel("GW40152N", "GW40152n.webp", "Tabel inkasi 24 module",
+    "Tabel elektrik nga inkasi, 24 (24+4) module, derë e verbër me kornizë metalike, IP40."),
+  tabel("GW40153N", "GW40153n.webp", "Tabel inkasi 36 module",
+    "Tabel elektrik nga inkasi, 36 (36+6) module, derë e verbër me kornizë metalike, IP40."),
+  tabel("GW40154N", "GW40154n.webp", "Tabel inkasi 48 module",
+    "Tabel elektrik nga inkasi, 48 module, derë e verbër me kornizë metalike, IP40."),
+  tabel("GW40155N", "GW40155N.webp", "Tabel inkasi 60 module",
+    "Tabel elektrik nga inkasi, 60 module, derë e verbër me kornizë metalike, IP40."),
+
+  // 40 series — decorative flush boards, smoked door, toner black, IP40.
+  tabel("GW40229TN", "gw40229tn.webp", "Tabel dekorativ 12 module — derë fumé",
+    "Tabel dekorativ nga inkasi, 12+1 module, derë fumé, ngjyrë e zezë (toner). Përmasa 330×218×25 mm, IP40."),
+  tabel("GW40233TN", "gw40233tn.webp", "Tabel dekorativ 24 module — derë fumé",
+    "Tabel dekorativ nga inkasi, 24+2 module, derë fumé, ngjyrë e zezë (toner). Përmasa 330×338×28 mm, IP40."),
+  tabel("GW40239TN", "gw40239tn.webp", "Tabel dekorativ 36 module — derë fumé",
+    "Tabel dekorativ nga inkasi, 36+3 module, derë fumé, ngjyrë e zezë (toner). Përmasa 330×493×28 mm, IP40."),
+
+  // 40 CDI — flush distribution boards, blank door, IP40.
+  tabel("GW40886", "GW40886.webp", "Tabel inkasi 24 module — derë e verbër",
+    "Tabel shpërndarës nga inkasi, 24 (12×2) module, derë e verbër, e bardhë RAL 9016. Përmasa 330×420×85 mm, IP40.", true),
+  tabel("GW40889", "GW40889.webp", "Tabel inkasi 36 module — derë e verbër",
+    "Tabel shpërndarës nga inkasi, 36 (18×2) module, derë e verbër, e bardhë RAL 9016. Përmasa 465×505×85 mm, IP40."),
+  tabel("GW40890", "GW40890.webp", "Tabel inkasi 54 module — derë e verbër",
+    "Tabel shpërndarës nga inkasi, 54 (18×3) module, derë e verbër, e bardhë RAL 9016, IP40."),
+  tabel("GW40891", "GW40891.webp", "Tabel inkasi 72 module — derë e verbër",
+    "Tabel shpërndarës nga inkasi, 72 (18×4) module, derë e verbër, e bardhë RAL 9016. Përmasa 465×880×95 mm, IP40."),
+
+  // 46 range — polyester enclosures, blank door + lock, IP66, grey RAL 7035.
+  tabel("GW46001F", "gw46001f.webp", "Orman poliesteri IP66 — 250×300×160",
+    "Orman nga poliesteri me fibër qelqi, derë e verbër me bravë, IP66, gri RAL 7035. Përmasa 250×300×160 mm. Për shpërndarje dhe automatizim brenda e jashtë."),
+  tabel("GW46002F", "gw46002f.webp", "Orman poliesteri IP66 — 310×425×160",
+    "Orman nga poliesteri me fibër qelqi, derë e verbër me bravë, IP66, gri RAL 7035. Përmasa 310×425×160 mm."),
+  tabel("GW46003F", "gw46003f.webp", "Orman poliesteri IP66 — 405×500×200",
+    "Orman nga poliesteri me fibër qelqi, derë e verbër me bravë, IP66, gri RAL 7035. Përmasa 405×500×200 mm."),
+  tabel("GW46004F", "gw46004f.webp", "Orman poliesteri IP66 — 405×650×200",
+    "Orman nga poliesteri me fibër qelqi, derë e verbër me bravë, IP66, gri RAL 7035. Përmasa 405×650×200 mm."),
+  tabel("GW46005F", "gw46005f.webp", "Orman poliesteri IP66 — 515×650×250",
+    "Orman nga poliesteri me fibër qelqi, derë e verbër me bravë, IP66, gri RAL 7035. Përmasa 515×650×250 mm."),
+  tabel("GW46006F", "gw46006f.webp", "Orman poliesteri IP66 — 585×800×300",
+    "Orman nga poliesteri me fibër qelqi, derë e verbër me bravë, IP66, gri RAL 7035. Përmasa 585×800×300 mm."),
+  tabel("GW46007F", "gw46007f.webp", "Orman poliesteri IP66 — 800×1060×350",
+    "Orman nga poliesteri me fibër qelqi, derë e verbër me bravë, IP66, gri RAL 7035. Përmasa 800×1060×350 mm. Për shpërndarje fuqie të lartë dhe automatizim."),
+];
+
 // Static catalog source. Used ONLY by the DB seed (scripts/seed.ts).
 // Runtime reads come from Neon via data/products.ts.
 export const staticProducts: Product[] = [
   ...generatePlates(),
   ...baseProducts,
+  ...tabelaProducts,
 ];
