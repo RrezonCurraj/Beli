@@ -461,6 +461,43 @@ const sistemiOgProducts: Product[] = [
     "Mbajtëse me kërcim (clip) për tub të ngurtë, polimer antiurt, Ø32 mm, gri RAL 7035."),
 ];
 
+// Automatika & Siguresa — breakers, RCDs, surge protectors, busbars.
+function sig(
+  sku: string,
+  file: string,
+  name: string,
+  description: string,
+  featured?: boolean,
+): Product {
+  return {
+    slug: `sig-${sku.toLowerCase()}`,
+    name,
+    sku,
+    brand: "Gewiss",
+    category: "automatika-siguresa",
+    description,
+    image: `/products/siguresat/${file}`,
+    featured,
+  };
+}
+
+const siguresatProducts: Product[] = [
+  sig("GW91507", "gw91507.webp", "Çelës automatik magnetotermik",
+    "Çelës automatik magnetotermik modular Gewiss, mbrojtje nga mbingarkesa dhe lidhja e shkurtër për tabela shpërndarjeje."),
+  sig("GWD4122", "gwd4122.webp", "Diferencial 4P 40A 30mA Tip AC",
+    "Çelës diferencial i pastër (IDP), 4 polësh, 40A, ndjeshmëri 30mA, tip AC i menjëhershëm. 4 module.", true),
+  sig("GWD6401", "GWD6401.webp", "Mbrojtës mbitensioni SPD 1P+N 12.5kA — Tip 1+2",
+    "Mbrojtës nga mbitensioni (SPD) seria LST, 1P+N, 12.5 kA, Tip 1+2. 2 module."),
+  sig("GWD6402", "GWD6402.webp", "Mbrojtës mbitensioni SPD 3P+N 12.5kA — Tip 1+2",
+    "Mbrojtës nga mbitensioni (SPD) seria LST, 3P+N, 12.5 kA, Tip 1+2. 4 module."),
+  sig("GWD6404", "GWD6404.webp", "Mbrojtës mbitensioni SPD 1P+N 25kA — Tip 1+2",
+    "Mbrojtës nga mbitensioni (SPD) seria LST, 1P+N, 25 kA, Tip 1+2. 4 module."),
+  sig("GW96996", "gw96996.webp", "Krehër lidhës me forcellë 1P 63A",
+    "Krehër lidhës (pettine) me forcellë, 1 polësh, 63A, gjatësi 1 m. Për lidhjen e çelësave modularë në tabelë."),
+  sig("GW96998", "gw96998.webp", "Krehër lidhës me forcellë 3P 63A",
+    "Krehër lidhës (pettine) me forcellë, 3 polësh, 63A, gjatësi 1 m, deri 56 module. Për lidhjen e çelësave modularë."),
+];
+
 // Static catalog source. Used ONLY by the DB seed (scripts/seed.ts).
 // Runtime reads come from Neon via data/products.ts.
 export const staticProducts: Product[] = [
@@ -468,4 +505,5 @@ export const staticProducts: Product[] = [
   ...baseProducts,
   ...tabelaProducts,
   ...sistemiOgProducts,
+  ...siguresatProducts,
 ];
