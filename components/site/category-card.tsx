@@ -67,10 +67,9 @@ export async function CategoryCard({
         <p className={cn("text-muted-foreground mt-1.5", size === "large" ? "text-sm leading-relaxed line-clamp-2" : "text-xs line-clamp-2")}>
           {category.description}
         </p>
-        <div className="mt-4 flex items-center gap-2 text-xs">
-          <span className="font-mono text-foreground/70 tabular-nums">{count} produkte</span>
-          <span className="text-border">•</span>
-          <span className="text-brand font-medium inline-flex items-center gap-0.5">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-xs">
+          <span className="font-mono text-foreground/70 tabular-nums whitespace-nowrap">{count} produkte</span>
+          <span className="text-brand font-medium inline-flex items-center gap-0.5 whitespace-nowrap">
             Shiko të gjitha
             <ArrowUpRight className="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </span>

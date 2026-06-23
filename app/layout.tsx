@@ -51,7 +51,7 @@ export default function RootLayout({
       lang="sq"
       className={`${inter.variable} ${manrope.variable} ${jetbrains.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground pb-20 md:pb-0">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-foreground focus:text-background focus:px-3 focus:py-2 focus:rounded-md"
