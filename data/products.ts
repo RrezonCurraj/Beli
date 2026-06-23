@@ -2,6 +2,7 @@ import { cache } from "react";
 import { asc } from "drizzle-orm";
 import type { SeriesSlug } from "./series";
 import type { Brand, Product, ProductColor } from "./products.static";
+import { bestsellerSlugs } from "./products.static";
 import { getDb, schema } from "../db";
 
 export type { Brand, Product, ProductColor };
@@ -30,7 +31,15 @@ const loadAll = cache(async (): Promise<Product[]> => {
     .select()
     .from(schema.products)
     .orderBy(asc(schema.products.sort), asc(schema.products.slug));
-  return rows.map(toProduct);
+  // Bestsellers float to the front; DB order is preserved otherwise
+  // (Array.sort is stable), so every listing shows them in the first row.
+  return rows
+    .map(toProduct)
+    .sort(
+      (a, b) =>
+        (bestsellerSlugs.has(a.slug) ? 0 : 1) -
+        (bestsellerSlugs.has(b.slug) ? 0 : 1),
+    );
 });
 
 export async function getAllProducts(): Promise<Product[]> {

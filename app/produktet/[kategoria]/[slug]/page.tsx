@@ -73,7 +73,7 @@ export default async function ProductPage(
   const trustItems = [
     { icon: ShieldCheck, label: "Produkt origjinal Gewiss" },
     { icon: Award, label: "Garanci fabrike" },
-    { icon: Truck, label: "Dërgesa në mbarë Shqipërinë" },
+    { icon: Truck, label: "Dërgesa në mbarë Kosovën" },
     { icon: Headset, label: "Mbështetje teknike" },
   ];
 
@@ -173,8 +173,9 @@ export default async function ProductPage(
                   productUrl={productUrl}
                   trigger={
                     <Button
+                      variant="brand"
                       size="lg"
-                      className="w-full h-11 bg-brand hover:bg-brand/90 text-brand-foreground"
+                      className="w-full h-11"
                     >
                       Kërko ofertë
                     </Button>
@@ -232,7 +233,7 @@ export default async function ProductPage(
                 <ChevronRight className="size-4" />
               </Link>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
               {related.map((p) => (
                 <ProductCard key={p.slug} product={p} />
               ))}

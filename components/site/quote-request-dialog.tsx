@@ -97,7 +97,7 @@ export function QuoteRequestDialog({
       <DialogTrigger
         render={
           trigger ?? (
-            <Button className="bg-brand hover:bg-brand/90 text-brand-foreground">
+            <Button variant="brand">
               Kërko ofertë
             </Button>
           )
@@ -175,8 +175,8 @@ export function QuoteRequestDialog({
             </a>
             <Button
               type="submit"
+              variant="brand"
               disabled={isSubmitting}
-              className="bg-brand hover:bg-brand/90 text-brand-foreground"
             >
               {isSubmitting ? "Po dërgohet..." : "Dërgo kërkesën"}
             </Button>

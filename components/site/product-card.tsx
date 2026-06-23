@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Product } from "@/data/products";
+import { bestsellerSlugs } from "@/data/products.static";
 import { getSeries, getSubSeries } from "@/data/series";
 import { QuoteRequestDialog } from "@/components/site/quote-request-dialog";
 import { Button } from "@/components/ui/button";
@@ -40,8 +41,13 @@ export function ProductCard({ product }: { product: Product }) {
         <span className="absolute top-3 right-3 size-7 rounded-full bg-background/90 backdrop-blur border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
           <ArrowUpRight className="size-3.5" />
         </span>
+        {bestsellerSlugs.has(product.slug) && (
+          <span className="absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-full bg-brand text-brand-foreground border border-brand/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide shadow-sm backdrop-blur">
+            Bestseller
+          </span>
+        )}
         {(product.subSeries === "ice" || product.subSeries === "icetouch") && (
-          <span className="absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-full bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/30 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide backdrop-blur">
+          <span className="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/30 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide backdrop-blur">
             Xham
           </span>
         )}

@@ -27,6 +27,9 @@ export type Product = {
   color?: ProductColor;
 };
 
+// Product slugs that carry a "Bestseller" badge on their card.
+export const bestsellerSlugs = new Set<string>(["pllake-gw16403vn"]);
+
 // ---------------------------------------------------------------------------
 // Base catalog — non-plate products (one row each).
 // ---------------------------------------------------------------------------

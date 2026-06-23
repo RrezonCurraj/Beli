@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/site/smooth-scroll";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { WhatsAppFloating } from "@/components/site/whatsapp-button";
@@ -57,6 +58,7 @@ export default function RootLayout({
         >
           Kalo te përmbajtja
         </a>
+        <SmoothScroll />
         <SiteHeader />
         <main id="main" className="flex-1">{children}</main>
         <SiteFooter />

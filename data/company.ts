@@ -3,7 +3,7 @@ export const company = {
   legalName: "Ntsh Beli",
   tagline: "Distributor i autorizuar i produkteve elektrike Gewiss",
   description:
-    "Ntsh Beli ofron një gamë të gjerë produktesh elektrike Gewiss dhe Marlanvil për instalues profesionistë, projekte rezidenciale dhe industriale në Shqipëri.",
+    "Ntsh Beli ofron një gamë të gjerë produktesh elektrike Gewiss dhe Marlanvil për instalues profesionistë, projekte rezidenciale dhe industriale në Kosovë.",
   email: "info@ntshbeli.com",
   phone: "+383 44 184 405",
   whatsapp: "38344184405",

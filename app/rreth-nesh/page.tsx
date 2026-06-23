@@ -6,7 +6,7 @@ import { company } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Rreth Nesh",
-  description: `Mësoni më shumë rreth ${company.name} — distributor i autorizuar i produkteve elektrike Gewiss dhe Marlanvil në Shqipëri.`,
+  description: `Mësoni më shumë rreth ${company.name} — distributor i autorizuar i produkteve elektrike Gewiss dhe Marlanvil në Kosovë.`,
 };
 
 export default function RrethNeshPage() {
@@ -81,7 +81,7 @@ export default function RrethNeshPage() {
         <p className="text-muted-foreground max-w-xl mx-auto">
           Na kontaktoni për çdo pyetje ose kërkesë oferte për produktet Gewiss.
         </p>
-        <LinkButton href="/kontakt" size="lg" className="bg-brand hover:bg-brand/90 text-brand-foreground">
+        <LinkButton href="/kontakt" variant="brand" size="lg">
           Na kontaktoni
         </LinkButton>
       </section>

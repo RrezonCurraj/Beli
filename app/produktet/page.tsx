@@ -37,7 +37,7 @@ export default async function ProduktetPage() {
 
       <section className="container mx-auto px-4 py-12">
         <h2 className="text-2xl font-semibold mb-6">Të gjitha produktet</h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {all.map((p) => (
             <ProductCard key={p.slug} product={p} />
           ))}

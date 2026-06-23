@@ -57,7 +57,7 @@ export default function KontaktPage() {
             </a>
             <QuoteRequestDialog
               trigger={
-                <Button className="bg-brand hover:bg-brand/90 text-brand-foreground">
+                <Button variant="brand">
                   Kërko ofertë
                 </Button>
               }

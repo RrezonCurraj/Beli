@@ -143,7 +143,7 @@ export default function AdminPage() {
           <button
             type="submit"
             disabled={pending}
-            className="w-full h-11 rounded-lg bg-brand hover:bg-brand/90 text-brand-foreground font-semibold text-sm transition-colors disabled:opacity-60"
+            className="w-full h-11 rounded-lg bg-gradient-to-br from-brand to-brand-accent text-brand-foreground font-semibold text-sm transition-[filter] hover:brightness-110 disabled:opacity-60"
           >
             {pending ? "Po shtohet..." : "Shto produktin"}
           </button>

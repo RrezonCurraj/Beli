@@ -19,7 +19,7 @@ export function MobileCtaBar() {
         </a>
         <Link
           href="/kontakt"
-          className="flex items-center justify-center gap-2 h-12 rounded-md bg-brand text-brand-foreground font-medium text-sm"
+          className="flex items-center justify-center gap-2 h-12 rounded-md bg-gradient-to-br from-brand to-brand-accent text-brand-foreground font-medium text-sm transition-[filter] hover:brightness-110"
         >
           <FileText className="size-4" />
           Kërko ofertë

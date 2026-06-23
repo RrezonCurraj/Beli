@@ -6,7 +6,12 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, MessageCircle, Phone, Mail, Clock } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 import { company } from "@/data/company";
@@ -30,11 +35,17 @@ export function SiteHeader() {
       <div className="hidden md:block bg-foreground text-background/80">
         <div className="container-page flex h-9 items-center justify-between text-xs">
           <div className="flex items-center gap-6">
-            <a href={`tel:${company.phone}`} className="inline-flex items-center gap-1.5 hover:text-background transition-colors">
+            <a
+              href={`tel:${company.phone}`}
+              className="inline-flex items-center gap-1.5 hover:text-background transition-colors"
+            >
               <Phone className="size-3.5" />
               {company.phone}
             </a>
-            <a href={`mailto:${company.email}`} className="inline-flex items-center gap-1.5 hover:text-background transition-colors">
+            <a
+              href={`mailto:${company.email}`}
+              className="inline-flex items-center gap-1.5 hover:text-background transition-colors"
+            >
               <Mail className="size-3.5" />
               {company.email}
             </a>
@@ -46,15 +57,19 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className="container-page flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2" aria-label="Ntsh Beli">
+      <div className="container-page flex h-20 items-center justify-between">
+        <Link
+          href="/"
+          className="flex items-center gap-2"
+          aria-label="Ntsh Beli"
+        >
           <Image
             src="/brand/ntshbeli-logo.svg"
             alt="Ntsh Beli"
-            width={140}
-            height={56}
+            width={180}
+            height={72}
             priority
-            className="h-10 w-auto"
+            className="h-20 md:h-22 w-auto"
           />
         </Link>
 
@@ -98,7 +113,7 @@ export function SiteHeader() {
           </a>
           <Link
             href="/kontakt"
-            className={cn(buttonVariants(), "bg-brand hover:bg-brand/90 text-brand-foreground")}
+            className={cn(buttonVariants({ variant: "brand" }))}
           >
             Kërko ofertë
           </Link>
@@ -107,7 +122,12 @@ export function SiteHeader() {
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger
             render={
-              <Button variant="ghost" size="icon" aria-label="Hap menunë" className="md:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Hap menunë"
+                className="md:hidden"
+              >
                 <Menu className="size-5" />
               </Button>
             }
@@ -138,12 +158,14 @@ export function SiteHeader() {
               <Link
                 href="/kontakt"
                 onClick={() => setOpen(false)}
-                className={cn(buttonVariants(), "bg-brand hover:bg-brand/90 text-brand-foreground")}
+                className={cn(buttonVariants({ variant: "brand" }))}
               >
                 Kërko ofertë
               </Link>
               <a
-                href={buildWhatsAppLink("Përshëndetje! Dua më shumë informacion.")}
+                href={buildWhatsAppLink(
+                  "Përshëndetje! Dua më shumë informacion.",
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(buttonVariants({ variant: "outline" }), "gap-2")}
@@ -152,11 +174,17 @@ export function SiteHeader() {
                 WhatsApp
               </a>
               <div className="border-t border-border my-4" />
-              <a href={`tel:${company.phone}`} className="inline-flex items-center gap-2 text-sm text-muted-foreground px-3 py-1.5">
+              <a
+                href={`tel:${company.phone}`}
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground px-3 py-1.5"
+              >
                 <Phone className="size-4" />
                 {company.phone}
               </a>
-              <a href={`mailto:${company.email}`} className="inline-flex items-center gap-2 text-sm text-muted-foreground px-3 py-1.5">
+              <a
+                href={`mailto:${company.email}`}
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground px-3 py-1.5"
+              >
                 <Mail className="size-4" />
                 {company.email}
               </a>
