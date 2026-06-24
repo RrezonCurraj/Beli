@@ -12,10 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default function KontaktPage() {
-  const mapsQuery = encodeURIComponent(
-    `${company.address.street}, ${company.address.city}, ${company.address.country}`,
-  );
-  const mapsEmbed = `https://www.google.com/maps?q=${mapsQuery}&output=embed`;
+  const mapsEmbed =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.765901647919!2d20.83312507685532!3d42.36443987119248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13539b1be312b4f9%3A0xaf5a3d50fcff5ec0!2sNTSH%20Beli!5e1!3m2!1sen!2s!4v1782313955852!5m2!1sen!2s";
 
   return (
     <>
