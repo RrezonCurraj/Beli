@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Zap } from "lucide-react";
+import { ArrowLeft, Zap } from "lucide-react";
 import { projects } from "@/data/projects";
 import { getProjectImages } from "@/lib/project-images";
-import { LinkButton } from "@/components/site/link-button";
 import { ProjectGallery } from "@/components/site/project-gallery";
 import { ProjectsBackLink } from "@/components/site/projects-back-link";
 
@@ -70,25 +69,6 @@ export default async function ProjectPage(
 
       <div className="mt-8">
         <ProjectGallery images={gallery} title={project.title} />
-      </div>
-
-      <div className="mt-12 rounded-2xl bg-slate-900 p-7 md:p-9 text-center">
-        <h2 className="font-heading text-2xl md:text-3xl font-bold text-white">
-          Keni një objekt për instalim?
-        </h2>
-        <p className="mt-2 text-slate-400 max-w-xl mx-auto">
-          Na dërgoni specifikat — ekipi ynë kthen ofertë brenda 24 orëve.
-        </p>
-        <div className="mt-6 flex justify-center">
-          <LinkButton
-            href="/kontakt"
-            size="lg"
-            className="h-11 px-5 text-base bg-gradient-to-br from-brand to-brand-accent text-brand-foreground shadow-sm shadow-brand/20 hover:brightness-110 transition-[filter]"
-          >
-            Kërko ofertë
-            <ArrowRight className="size-4" />
-          </LinkButton>
-        </div>
       </div>
     </section>
   );
