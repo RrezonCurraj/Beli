@@ -51,13 +51,23 @@ export async function sendQuoteEmail(payload: QuoteRequestPayload) {
   `;
 
   const resend = getResend();
-  return resend.emails.send({
+  const { data, error } = await resend.emails.send({
     from,
     to,
     subject,
     html,
     replyTo: payload.email,
   });
+
+  if (error) {
+    // Resend returns errors in the response body instead of throwing, so a
+    // rejected send (test mode, unverified domain, etc.) would otherwise look
+    // like a success. Surface it so the API responds 500 and the form shows
+    // an error instead of a false "u dërgua".
+    throw new Error(`Resend: ${error.name} — ${error.message}`);
+  }
+
+  return data;
 }
 
 function escapeHtml(s: string): string {
