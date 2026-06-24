@@ -14,18 +14,18 @@ export function BrandStrip() {
             Partner i autorizuar
           </span>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
           {brands.map((b) => (
             <div
               key={b.name}
-              className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="flex items-center justify-center rounded-xl bg-slate-900 px-8 py-5 md:px-10 md:py-6 hover:-translate-y-0.5 transition-transform duration-300"
             >
               <Image
                 src={b.src}
                 alt={b.name}
                 width={b.w}
                 height={b.h}
-                className="h-10 md:h-12 w-auto object-contain"
+                className="h-9 md:h-11 w-auto object-contain"
               />
             </div>
           ))}

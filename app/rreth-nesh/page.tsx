@@ -34,7 +34,7 @@ export default function RrethNeshPage() {
           aplikojmë garancinë e fabrikës për çdo artikull të shitur.
         </p>
         <div className="grid grid-cols-2 gap-6 pt-4">
-          <div className="flex items-center justify-center rounded-xl border border-border bg-background p-8">
+          <div className="flex items-center justify-center rounded-xl bg-slate-900 p-8">
             <Image
               src="/brand/gewiss-logo.svg"
               alt="Gewiss"
@@ -43,7 +43,7 @@ export default function RrethNeshPage() {
               className="h-14 w-auto"
             />
           </div>
-          <div className="flex items-center justify-center rounded-xl border border-border bg-background p-8">
+          <div className="flex items-center justify-center rounded-xl bg-slate-900 p-8">
             <Image
               src="/brand/marlanvil-logo.svg"
               alt="Marlanvil"
